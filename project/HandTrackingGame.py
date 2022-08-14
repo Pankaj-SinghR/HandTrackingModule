@@ -10,9 +10,9 @@ detector = htm.handDetector()
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
-    lmlist = detector.findPosition(img)
+    lmlist = detector.findPosition(img, draw=False)
     if len(lmlist) != 0:
-        print(lmlist[0])
+        print(lmlist[9])
 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
