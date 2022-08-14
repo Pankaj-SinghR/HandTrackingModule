@@ -3,7 +3,6 @@ import cv2
 import mediapipe as mp
 import time
 
-
 class handDetector():
     def __init__(self):
         self.mpHands = mp.solutions.hands
@@ -51,7 +50,7 @@ if __name__ == "__main__":
         img = detector.findHands(img)
         lmlist = detector.findPosition(img)
         if len(lmlist) != 0:
-            print(lmlist[0])
+            print(lmlist[8])
 
         cv2.imshow("Image", img)
         cv2.waitKey(1)
