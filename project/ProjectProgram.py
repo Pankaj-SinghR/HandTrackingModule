@@ -48,11 +48,11 @@ try:
 
     def left_rotate(angle):
         board.digital[Servo_Pin].write(angle)
-        sleep(0.005)
+        sleep(0.015)
 
     def right_rotate(angle):
         board.digital[Servo_Pin].write(angle)
-        sleep(0.005)
+        sleep(0.015)
 
 except Exception as e:
     print(e)
@@ -80,19 +80,17 @@ try:
                 stop_motor()
             elif (y <= 240):
                 forward()
-            elif( 240 < y and y < 320 ):
-                stop_motor()
-            elif (y >= 320):
+            elif (y >= 240):
                 backward()
 
-            if (x <= 150 and track_angle != 91): 
-                for angle in range(track_angle, 90, -1):
+            if (x <= 150 and track_angle != 46): 
+                for angle in range(track_angle, 45, -1):
                     left_rotate(angle)
                     track_angle = angle
                     # print(track_angle)
                     
-            elif (x >= 530 and track_angle != 155):
-                for angle in range(track_angle, 156):
+            elif (x >= 530 and track_angle != 169):
+                for angle in range(track_angle, 170):
                     right_rotate(angle)
                     track_angle = angle
                     # print(track_angle)
