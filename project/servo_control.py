@@ -3,7 +3,7 @@ from pyfirmata import Arduino, SERVO, INPUT, OUTPUT, PWM
 from time import sleep
 
 try:
-    Arduino_port = '/dev/ttyUSB0'
+    Arduino_port = '/dev/ttyACM0'
     pin = 10
     board = Arduino(Arduino_port)
 
